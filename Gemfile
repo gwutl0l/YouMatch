@@ -7,6 +7,11 @@ gem 'rails', '3.0.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+# Facebook
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+gem 'oauth2', :git => 'git://github.com/intridea/oauth2.git'
+gem 'omnisocial'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
