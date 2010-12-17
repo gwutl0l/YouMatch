@@ -12,13 +12,25 @@ module ApplicationHelper
 
   def login_status
     if current_user.from_twitter?
-      "This is twitter"
+      account_url
     if current_user.from_facebook?
-      "Hello from facebook!"
+      account_url
     else
       "Houston, we have a problem."
     end
   end
   end
+
+  def account_url
+      "http://facebook.com/#{self.login}"
+    end
+  
+    def picture_url
+      if self.login.include?('profile.php')
+        "https://graph.facebook.com/#{self.login.gsub(/[^\d]/, '')}/picture?type=square"
+      else
+        "https://graph.facebook.com/#{self.login}/picture?type=square"
+      end
+    end
 
 end
