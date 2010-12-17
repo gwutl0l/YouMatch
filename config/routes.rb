@@ -1,5 +1,7 @@
 Podil::Application.routes.draw do
   
+  get "index/books"
+
   devise_for :users
 
   root :to => "home#index"
