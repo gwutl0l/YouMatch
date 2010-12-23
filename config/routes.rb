@@ -1,11 +1,4 @@
 Podil::Application.routes.draw do
-  
-  get "index/books"
-
-  devise_for :users
-
-  root :to => "index#books"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
