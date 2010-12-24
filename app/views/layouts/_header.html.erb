@@ -1,0 +1,10 @@
+<header>
+<% logo = image_tag("logo.png", :alt => "Podil", :class => "round") %>
+<center><%= link_to logo, root_path %></center>
+        <nav class="round">
+          <ul>
+            <li><% link_to "Home", root_path %></li>
+            <li><% link_to "Help", help_path %></li>
+          </ul>
+        </nav>
+      </header>
