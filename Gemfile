@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'youtube-model', :git => 'git://github.com/itkin/youtube-model.git'
 
 group :development do
   gem 'rspec-rails'

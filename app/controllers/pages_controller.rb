@@ -14,4 +14,10 @@ class PagesController < ApplicationController
     @title = "Hop hop and away!"
   end
 
+  def youtube
+    @title   = "Results"
+    @search  = params['q']
+    @youtube = ""
+  end
+
 end

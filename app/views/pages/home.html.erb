@@ -1,2 +1,7 @@
-        <h1>Pages#home</h1> 
-<p>Find me in app/views/pages/home.html.erb</p> 
+<% form_tag(youtube_path, :method => 'get') do %>
+  <center>
+    <%= label_tag :q, "Search for: " %>
+    <%= text_field_tag :q, '', :size => 75 %>
+    <%= submit_tag 'Search' %>
+  </center>
+<% end %>
