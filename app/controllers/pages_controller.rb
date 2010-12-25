@@ -21,5 +21,6 @@ class PagesController < ApplicationController
     @search  = params['q']
     client = YouTubeG::Client.new
     @youtube = client.videos_by(:query => "#{@search}")
+    #@vids = @youtube.paginate(:page => params[:query])
   end
 end
