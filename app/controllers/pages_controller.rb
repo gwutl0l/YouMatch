@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  require 'rubygems'
+  require 'youtube_g'
   def home
   end
 
@@ -17,7 +19,7 @@ class PagesController < ApplicationController
   def youtube
     @title   = "Results"
     @search  = params['q']
-    @youtube = ""
+    client = YouTubeG::Client.new
+    @youtube = client.videos_by(:query => "#{@search}")
   end
-
 end

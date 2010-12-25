@@ -1,4 +1,14 @@
 <center>
   <h1>Results</h1>
-  <%= @search %>
+  <% @youtube.paginate.videos.each do |v| %>
+    <p><object width="425" height="350"> 
+      <param name="movie" value="<%= v.embed_url %>">
+      </param> 
+      <param name="wmode" value="transparent">
+      </param> 
+      <embed src="<%= v.embed_url %>" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350">
+      </embed> 
+    </object><br />
+    <%= link_to v.title, v.embed_url %></p>
+  <% end %>
 </center>
