@@ -19,8 +19,10 @@ class PagesController < ApplicationController
   def youtube
     @title   = "Results"
     @search  = params['q']
-    client = YouTubeG::Client.new
-    @youtube = client.videos_by(:query => "#{@search}")
+    @i = +1
+    client   = YouTubeG::Client.new
+    @youtube = client.videos_by(:query => "#{@search}", :page => "#{@i}", :per_page => 5)
+    #@vids    = @youtube(:page => params[:page], :per_page => 5)
     #@vids = @youtube.paginate(:page => params[:query])
   end
 end
