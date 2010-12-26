@@ -6,6 +6,7 @@ gem 'youtube-g'
 gem 'will_paginate', '3.0.pre2'
 gem 'musix_match'
 gem 'RedCloth'
+gem 'indextank'
 
 group :development do
   gem 'rspec-rails'

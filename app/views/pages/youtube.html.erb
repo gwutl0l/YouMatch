@@ -20,7 +20,7 @@
  <% if response.status_code == 200 %>
    <% response.each do |track| %>
      <% track_id = "#{track.track_id}" %>
-     <%= "#{track.artist_name} : #{track.track_name}" %>
+     <em><b><u><%= "#{track.artist_name} : #{track.track_name}" %></u></b></em>
      <% query =  MusixMatch.get_lyrics(track_id) %>
      <% if query.status_code == 200 && lyrics = query.lyrics %>
  <% lyric = lyrics.lyrics_body %>
@@ -29,3 +29,4 @@
        <% end %>
      <% end %>
 <% end %> 
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=171535432887454&amp;xfbml=1"></script><fb:comments numposts="10" width="425" publish_feed="true"></fb:comments>

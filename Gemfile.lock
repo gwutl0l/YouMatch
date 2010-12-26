@@ -29,22 +29,33 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
+    addressable (2.2.2)
     arel (2.0.6)
     builder (2.1.2)
     crack (0.1.8)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    faraday (0.5.3)
+      addressable (~> 2.2.2)
+      multipart-post (~> 1.0.1)
+      rack (>= 1.1.0, < 2)
     httparty (0.6.1)
       crack (= 0.1.8)
     i18n (0.5.0)
+    indextank (0.0.5)
+      faraday
+      json_pure (= 1.4.6)
+      yajl-ruby (= 0.7.7)
     json (1.4.6)
+    json_pure (1.4.6)
     mail (2.2.12)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    multipart-post (1.0.1)
     musix_match (0.1.10)
       httparty (>= 0.6.1)
       json
@@ -90,6 +101,7 @@ GEM
       rack (>= 1.0)
       rack-test (>= 0.5.3)
     will_paginate (3.0.pre2)
+    yajl-ruby (0.7.7)
     youtube-g (0.5.0)
 
 PLATFORMS
@@ -97,6 +109,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
+  indextank
   musix_match
   rails (= 3.0.3)
   rspec
