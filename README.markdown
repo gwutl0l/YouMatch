@@ -13,7 +13,10 @@ and the one in the [Rails Tutorial Book](http://railstutorial.org/).
 
 * Add lyrics in the app [X]   
 
-* Add Metadata (title, author, length, places to buy[?])   
+* Add Metadata (title, author, length, places to buy[?]).   
+Other music by the same artist (list).   
+
+* Implement IndexTank API   
 
 * Make it look good   
 
