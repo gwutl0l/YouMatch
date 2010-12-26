@@ -5,6 +5,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'youtube-g'
 gem 'will_paginate', '3.0.pre2'
 gem 'musix_match'
+gem 'RedCloth'
 
 group :development do
   gem 'rspec-rails'
