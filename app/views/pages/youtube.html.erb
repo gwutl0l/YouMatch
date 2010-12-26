@@ -1,4 +1,7 @@
-  <h1>Results</h1>
+<% require 'rubygems' %>
+<% require 'musix_match' %>
+<h1>Results</h1>
+<%= puts "Welcome" %>
   <% @youtube.videos.each do |v| %>
     <% if v.embeddable?  %>
      <p><object width="425" height="350"> 
@@ -9,7 +12,18 @@
        <embed src="<%= v.embed_url %>" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350">
        </embed> 
      </object><br />
-     <%= link_to v.title, v.embed_url %></p>
+     <a href="http://www.youtube.com/watch?v=<%= v.unique_id %>"><%= v.title %></a></p>
  <% end %>
- <%= v.total_result_count %>
-<% end %>
+   <% end %>
+ <% MusixMatch::API::Base.api_key = '64d41a1b7134ab24fb2cc577a0aa8e84' %>
+ <% response = MusixMatch.search_track(:q => params['q'], :page => 1, :page_size => 1, :f_has_lyrics => 1) %>
+ <% if response.status_code == 200 %>
+   <% response.each do |track| %>
+     <% track_id = "#{track.track_id}" %>
+     <%= "#{track.artist_name} : #{track.track_name}" %>
+     <% query =  MusixMatch.get_lyrics(track_id) %>
+     <% if query.status_code == 200 && lyrics = query.lyrics %>
+       <em><p><%= lyrics.lyrics_body %></p></em>
+       <% end %>
+     <% end %>
+<% end %> 
