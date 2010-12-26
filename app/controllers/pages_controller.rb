@@ -41,7 +41,7 @@ class PagesController < ApplicationController
     response = MusixMatch.search_track(:q_artist => 'Pantera')
       if response.status_code == 200
         response.each do |track|
-          @mus = " #{track.artist_name} #{track.track_name}"
+          @mus = "#{track.artist_name} #{track.track_name}"
        end
     end
   end
