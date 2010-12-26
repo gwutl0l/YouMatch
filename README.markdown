@@ -10,5 +10,5 @@ Yes I am learning Rails while doing this project
 and the one in the [Rails Tutorial Book](http://railstutorial.org/).
 
 ## Credits
-[Youtube](http://www.youtube.com) API : [Aman Gupta](http://twitter.com/tmm1) for the [YouTube-g wrapper](https://github.com/tmm1/youtube-g)
-[MusixMatch](http://musixmatch.com/) API : [Andrea Franz](http://gravityblast.com/) for the [musix_match wrapper](https://github.com/pilu/musix_match)
+[Youtube](http://www.youtube.com) API : [Aman Gupta](http://twitter.com/tmm1) for the [YouTube-g wrapper](https://github.com/tmm1/youtube-g)   
+[MusixMatch](http://musixmatch.com/) API : [Andrea Franz](http://gravityblast.com/) for the [musix_match wrapper](https://github.com/pilu/musix_match)   
