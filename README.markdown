@@ -5,7 +5,7 @@ so we'll see how that goes!
 Happy Holidays to everyone and good luck to the participants!
 
 ## Steps
-* Learn Rails, build the structure. [X]
+* Learn Rails, build the structure. [X]   
 Yes I am learning Rails while doing this project 
 and the one in the [Rails Tutorial Book](http://railstutorial.org/).   
 
