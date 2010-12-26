@@ -1,5 +1,5 @@
 .container {
-  width: 710px;
+  width: 60%;
 }
 
 body {
@@ -102,4 +102,20 @@ footer nav {
   -moz-border-radius:    10px;
   -webkit-border-radius: 10px;
   border-radius:         10px;
+}
+
+/* Search layout */
+
+.lyrics {
+  float: right;
+}
+
+.video {
+  float:left;
+}
+
+.footer {
+  position: fixed;
+  bottom: 5px;
+  left: 10%;
 }

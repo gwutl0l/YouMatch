@@ -1,8 +1,7 @@
 <% require 'rubygems' %>
 <% require 'musix_match' %>
 <% require 'RedCloth' %>
-<h1><center>Results</center></h1>
-  <% @youtube.videos.each do |v| %>
+<div class="video"><% @youtube.videos.each do |v| %>
     <% if v.embeddable?  %>
      <p><object width="425" height="350"> 
         <param name="movie" value="<%= v.embed_url %>">
@@ -16,6 +15,8 @@
    <% @title = v.title %>
  <% end %>
    <% end %>
+ </div>
+ <div class="lyrics">
  <% MusixMatch::API::Base.api_key = '64d41a1b7134ab24fb2cc577a0aa8e84' %>
  <% response = MusixMatch.search_track(:q => params['q'], :page => 1, :page_size => 1, :f_has_lyrics => 1) %>
  <% if response.status_code == 200 %>
@@ -29,5 +30,8 @@
  <%=raw textile_object %>
        <% end %>
      <% end %>
-<% end %> 
-<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=171535432887454&amp;xfbml=1"></script><fb:comments numposts="10" width="425" publish_feed="true"></fb:comments>
+   <% end %> 
+ </div>
+ <div class="fb">
+   <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=171535432887454&amp;xfbml=1"></script><fb:comments numposts="10" width="425" publish_feed="true"></fb:comments>
+   </div>
