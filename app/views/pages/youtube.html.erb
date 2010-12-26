@@ -1,8 +1,7 @@
 <% require 'rubygems' %>
 <% require 'musix_match' %>
 <% require 'RedCloth' %>
-<h1>Results</h1>
-<%= puts "Welcome" %>
+<h1><center>Results</center></h1>
   <% @youtube.videos.each do |v| %>
     <% if v.embeddable?  %>
      <p><object width="425" height="350"> 

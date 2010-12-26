@@ -28,12 +28,12 @@ class PagesController < ApplicationController
   
   def musixmatch
     MusixMatch::API::Base.api_key = '64d41a1b7134ab24fb2cc577a0aa8e84'
-    search = params['q']
-    response = MusixMatch.search_track(:q => 'Pantera')
+    response = MusixMatch.search_track(:q => params['q'])
       if response.status_code == 200 && lyrics = response.lyrics
         track_id = "#{track.track_id}"
         query = MusixMatch.get_lyrics(track_id)
         @lyrics = puts lyrics.lyrics_body
+
       end
   end
 
@@ -41,7 +41,7 @@ class PagesController < ApplicationController
     response = MusixMatch.search_track(:q_artist => 'Pantera')
       if response.status_code == 200
         response.each do |track|
-         puts "#{track.track_id}: #{track.track_name} (#{track.artist_name})"
+          @mus = " #{track.artist_name} #{track.track_name}"
        end
     end
   end
