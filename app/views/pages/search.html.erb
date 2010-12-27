@@ -1,0 +1,47 @@
+<% require 'rubygems' %>
+<% require 'musix_match' %>
+<% require 'RedCloth' %>
+<% form_tag(search_path, :method => 'get') do %>
+  <center>
+    <%= label_tag :q, "Search for: " %>
+    <%= text_field_tag :q, '', :size => 75 %>
+    <%= submit_tag 'Search' %>
+  </center>
+<% end %>
+<div class="video"><% @youtube.videos.each do |v| %>
+    <% if v.embeddable?  %>
+     <p><object width="425" height="350"> 
+        <param name="movie" value="<%= v.embed_url %>">
+       </param> 
+       <param name="wmode" value="transparent">
+        </param> 
+       <embed src="<%= v.embed_url %>" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350">
+       </embed> 
+     </object><br />
+     <a href="http://www.youtube.com/watch?v=<%= v.unique_id %>"><%= v.title %></a></p>
+   <% @title = v.title %>
+ <% end %>
+   <% end %>
+ </div>
+ <div class="lyrics">
+ <% MusixMatch::API::Base.api_key = '64d41a1b7134ab24fb2cc577a0aa8e84' %>
+ <% response = MusixMatch.search_track(:q => params['q'], :page => 1, :page_size => 1, :f_has_lyrics => 1) %>
+ <% if response.status_code == 200 %>
+   <% response.each do |track| %>
+     <% track_id = "#{track.track_id}" %>
+     <em><b><u><%= "#{track.artist_name} : #{track.track_name}" %></u></b></em>
+     <% query =  MusixMatch.get_lyrics(track_id) %>
+     <% if query.status_code == 200 && lyrics = query.lyrics %>
+       <% lyric = lyrics.lyrics_body %>
+       <% @lyric_id = lyrics.lyrics_id %>
+       <% problem = "wrong_attribution" %>
+       <a href="<%= MusixMatch.post_feedback(track_id, @lyric_id, problem) %>">Wrong song?</a>
+       <% textile_object = RedCloth.new(lyric).to_html %>
+ <%=raw textile_object %>
+       <% end %>
+     <% end %>
+   <% end %> 
+ </div>
+ <div class="fb">
+   <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=171535432887454&amp;xfbml=1"></script><fb:comments numposts="10" width="425" publish_feed="true"></fb:comments>
+ </div>
