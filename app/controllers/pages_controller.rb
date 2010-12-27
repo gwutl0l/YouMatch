@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   require 'rubygems'
   require 'youtube_g'
   require 'musix_match'
+  require 'mbws'
 
   def home
   end
@@ -18,7 +19,7 @@ class PagesController < ApplicationController
     @title = "Hop hop and away!"
   end
 
-  def youtube
+  def search
     @title   = "Results"
     search  = params['q']
     @i = +1
@@ -26,24 +27,8 @@ class PagesController < ApplicationController
     @youtube = client.videos_by(:query => "#{search}", :page => "#{@i}", :per_page => 1)
   end
   
-  def musixmatch
-    MusixMatch::API::Base.api_key = '64d41a1b7134ab24fb2cc577a0aa8e84'
-    response = MusixMatch.search_track(:q => params['q'])
-      if response.status_code == 200 && lyrics = response.lyrics
-        track_id = "#{track.track_id}"
-        query = MusixMatch.get_lyrics(track_id)
-        @lyrics = puts lyrics.lyrics_body
-
-      end
-  end
-
-  def musixsearch
-    response = MusixMatch.search_track(:q_artist => 'Pantera')
-      if response.status_code == 200
-        response.each do |track|
-          @mus = "#{track.artist_name} #{track.track_name}"
-       end
-    end
+  def artistsearch
+    @search = Release.find(:query => params['q'])
   end
 
 end

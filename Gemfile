@@ -7,6 +7,7 @@ gem 'will_paginate', '3.0.pre2'
 gem 'musix_match'
 gem 'RedCloth'
 gem 'indextank'
+gem 'xml-simple'
 
 group :development do
   gem 'rspec-rails'

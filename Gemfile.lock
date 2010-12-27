@@ -101,6 +101,7 @@ GEM
       rack (>= 1.0)
       rack-test (>= 0.5.3)
     will_paginate (3.0.pre2)
+    xml-simple (1.0.12)
     yajl-ruby (0.7.7)
     youtube-g (0.5.0)
 
@@ -118,4 +119,5 @@ DEPENDENCIES
   sqlite3-ruby
   webrat
   will_paginate (= 3.0.pre2)
+  xml-simple
   youtube-g

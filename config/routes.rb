@@ -3,7 +3,7 @@ Podil::Application.routes.draw do
   match '/about', :to => 'pages#about'
   match '/contact', :to => 'pages#contact'
   match '/help', :to => 'pages#help'
-  match '/youtube', :to => 'pages#youtube'
+  match '/search', :to => 'pages#search'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

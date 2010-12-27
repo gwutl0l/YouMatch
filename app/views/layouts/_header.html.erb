@@ -2,10 +2,3 @@
 <% logo = image_tag("logo.png", :alt => "Podil", :class => "round") %>
 <center><%= link_to logo, root_path %></center>
       </header>
-<% form_tag(youtube_path, :method => 'get') do %>
-  <center>
-    <%= label_tag :q, "Search for: " %>
-    <%= text_field_tag :q, '', :size => 75 %>
-    <%= submit_tag 'Search' %>
-  </center>
-<% end %>
