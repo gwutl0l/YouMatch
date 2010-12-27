@@ -8,6 +8,8 @@ gem 'musix_match'
 gem 'RedCloth'
 gem 'indextank'
 gem 'xml-simple'
+gem 'hpricot'
+gem 'activesupport'
 
 group :development do
   gem 'rspec-rails'

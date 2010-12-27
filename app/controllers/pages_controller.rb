@@ -22,13 +22,10 @@ class PagesController < ApplicationController
   def search
     @title   = "Results"
     search  = params['q']
+    @quer   = search
     @i = +1
     client   = YouTubeG::Client.new
     @youtube = client.videos_by(:query => "#{search}", :page => "#{@i}", :per_page => 1)
+    @msearch = Search.music_hash
   end
-  
-  def artistsearch
-    @search = Release.find(:query => params['q'])
-  end
-
 end
