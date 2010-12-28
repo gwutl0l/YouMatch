@@ -23,3 +23,4 @@ Other music by the same artist (list).
 ## Credits
 [Youtube](http://www.youtube.com) API : [Aman Gupta](http://twitter.com/tmm1) for the [YouTube-g wrapper](https://github.com/tmm1/youtube-g)   
 [MusixMatch](http://musixmatch.com/) API : [Andrea Franz](http://gravityblast.com/) for the [musix_match wrapper](https://github.com/pilu/musix_match)   
+[Last.fm](http://www.last.fm/) API : [Christopher Burnett](http://twoism.posterous.com/) for the [last.fm wrapper](https://github.com/digitalscientists/ruby-last.fm-wrapper)

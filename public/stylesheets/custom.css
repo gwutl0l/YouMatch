@@ -119,3 +119,8 @@ footer nav {
   bottom: 5px;
   left: 1%;
 }
+
+.constrict {
+  /* width: 500px; */
+  width: 50%;
+}
