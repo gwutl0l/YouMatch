@@ -14,11 +14,13 @@ and the one in the [Rails Tutorial Book](http://railstutorial.org/).
 * Add lyrics in the app [X]   
 
 * Add Metadata (title, author, length, places to buy[?]).   
-Other music by the same artist (list).   
+Other music by the same artist (list). [/]
 
 * Implement IndexTank API   
 
 * Make it look good   
+
+* Add [:flash] for when there's no youtube video (or play next on the list and so on?)
 
 ## Credits
 [Youtube](http://www.youtube.com) API : [Aman Gupta](http://twitter.com/tmm1) for the [YouTube-g wrapper](https://github.com/tmm1/youtube-g)   

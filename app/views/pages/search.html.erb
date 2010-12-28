@@ -9,7 +9,8 @@
     <%= submit_tag 'Search' %>
   </center>
 <% end %>
-<div class="video"><% @youtube.videos.each do |v| %>
+<div class="video">
+  <% @youtube.videos.each do |v| %>
     <% if v.embeddable?  %>
       <% title_track = v.title%>
      <p><object width="425" height="350"> 
@@ -27,14 +28,14 @@
    <% @similar['similarartists']['artist'].each do |sima| %>
      <a href="/search?utf8=✓&q=<%= sima['name'] %>&commit=Search"><%= sima['name'] %></a>
    <% end %>
-   <br />
-   Similar tracks:
+ <% end %>
+ <br />
+ Similar tracks:
    <% @simitr['similartracks']['track'].each do |simt| %>
      <a href="/search?utf8=✓&q=<%= simt['name'] %>&commit=Search"><%= simt['name'] %></a>
-   <% end %>
+ <% end %>
    <br />
    </div>
- <% end %>
  </div>
  <div class="lyrics">
  <% MusixMatch::API::Base.api_key = '64d41a1b7134ab24fb2cc577a0aa8e84' %>
@@ -54,7 +55,7 @@
        <% end %>
      <% end %>
    <% end %> 
-   <% end %>
+ <% end %>
  </div>
  <div class="fb">
    <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=171535432887454&amp;xfbml=1"></script><fb:comments numposts="10" width="425" publish_feed="true"></fb:comments>
