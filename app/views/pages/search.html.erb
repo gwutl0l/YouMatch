@@ -23,20 +23,8 @@
      </object><br />
      <a href="http://www.youtube.com/watch?v=<%= v.unique_id %>"><%= v.title %></a></p>
    <% @title = v.title %>
-   <div class="constrict">
-     Similar artists: 
-   <% @similar['similarartists']['artist'].each do |sima| %>
-     <a href="/search?utf8=✓&q=<%= sima['name'] %>&commit=Search"><%= sima['name'] %></a>
-   <% end %>
- <% end %>
- <br />
- Similar tracks:
-   <% @simitr['similartracks']['track'].each do |simt| %>
-     <a href="/search?utf8=✓&q=<%= simt['name'] %>&commit=Search"><%= simt['name'] %></a>
- <% end %>
-   <br />
-   </div>
  </div>
+ <% end %>
  <div class="lyrics">
  <% MusixMatch::API::Base.api_key = '64d41a1b7134ab24fb2cc577a0aa8e84' %>
  <% response = MusixMatch.search_track(:q => title_track, :page => 1, :page_size => 1, :f_has_lyrics => 1) %>
