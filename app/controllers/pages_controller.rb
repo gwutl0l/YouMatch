@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   require 'musix_match'
   require 'mbws'
   require 'last_fm'
+  require 'twitter'
 
   def home
   end

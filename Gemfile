@@ -10,6 +10,8 @@ gem 'indextank'
 gem 'xml-simple'
 gem 'hpricot'
 gem 'activesupport'
+gem 'twitter'
+gem 'faraday_middleware'
 
 group :development do
   gem 'rspec-rails'
