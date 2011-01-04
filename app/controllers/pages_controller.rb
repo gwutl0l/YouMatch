@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   require 'twitter'
 
   def home
+    client   = YouTubeG::Client.new
+    @youtube = client.videos_by(:tags => ['music'],:time => :today, :per_page => 4)
   end
 
   def contact
