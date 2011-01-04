@@ -38,7 +38,7 @@
  <% end %>
  <div class="lyrics">
  <% MusixMatch::API::Base.api_key = '64d41a1b7134ab24fb2cc577a0aa8e84' %>
- <% response = MusixMatch.search_track(:q => params['q'], :page => 1, :page_size => 1, :f_has_lyrics => 1) %>
+ <% response = MusixMatch.search_track(:q => @title, :page => 1, :page_size => 1, :f_has_lyrics => 1) %>
  <% if response.status_code == 200 %>
    <% response.each do |track| %>
      <% track_id = "#{track.track_id}" %>
