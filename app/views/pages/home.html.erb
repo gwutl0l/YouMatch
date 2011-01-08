@@ -1,7 +1,9 @@
 <% form_tag(search_path, :method => 'get') do %>
   <center>
-    <%= label_tag :q, "Search for: " %>
-    <%= text_field_tag :q, '', :size => 75 %>
+    <span id="name" style="visibility:hidden;"><%= label_tag :q, "Search for (Artist, song): " %></span>
+    <div  type="text" onmouseover="document.getElementById('name').style .visibility='visible'" onmouseout="document.getElementById('name').style. visibility='hidden'">
+      <%= text_field_tag :q, 'Tik Tok', :size => 75 %>
+    </div>
     <%= submit_tag 'Search' %>
   </center>
 <% end %>
