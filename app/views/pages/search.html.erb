@@ -50,7 +50,8 @@
        <% lyric = lyrics.lyrics_body %>
        <% @lyric_id = lyrics.lyrics_id %>
        <% textile_object = RedCloth.new(lyric).to_html %>
- <%=raw textile_object %>
+       <%=raw textile_object %>
+       <i>Lyrics Provided by <a href="http://musixmatch.com/">MusixMatch</a></i>
        <% end %>
      <% end %>
    <% end %> 
